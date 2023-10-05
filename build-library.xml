@@ -15,10 +15,10 @@
 		<property name="optimize"       value="off"/>
 		<property name="deprecation"    value="off"/>
 		<property name="build.compiler" value="modern"/>
-		<property name="target.vm"      value="1.7"/>		
+		<property name="target.vm"      value="1.8"/>
 		<property name="dir.base"      value="build/na-authenticator"/>		
 		<path id="classpath">
-			<fileset dir="libs">
+			<fileset dir="../libs">
 				<include name="*.jar"/>
 			</fileset>
 		</path>
