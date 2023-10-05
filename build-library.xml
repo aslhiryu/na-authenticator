@@ -18,7 +18,7 @@
 		<property name="target.vm"      value="1.8"/>
 		<property name="dir.base"      value="build/na-authenticator"/>		
 		<path id="classpath">
-			<fileset dir="../libs">
+			<fileset dir="lib">
 				<include name="*.jar"/>
 			</fileset>
 		</path>
