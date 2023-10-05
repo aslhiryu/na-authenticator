@@ -1,0 +1,28 @@
+/*
+* Hoja de estilos para los elementos de la administración y gestion de usuarios
+*/
+
+/* 
+    Created on : 22/10/2015, 12:36:00 PM
+    Author     : Hiryu (aslhiryu@gmail.com)
+*/
+
+
+/*
+* Para el espacio de la foto
+*/
+.NA_UserDetails_detail table.NA_UserDetails_dataTable td.NA_UserDetails_photo{
+    height: 120px;
+    background-image: url(../../neoAtlantis/resources/images/NA_noPhoto.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+}
+
+/*
+* Para la foto
+*/
+.NA_UserDetails_detail table.NA_UserDetails_dataTable td.NA_UserDetails_photo img.NA_UserDetails_photoImage{
+    height: 120px;
+    border: 1px solid black;
+}

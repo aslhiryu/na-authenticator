@@ -1,0 +1,3 @@
+$computername = "mycomputername"
+
+$computername
