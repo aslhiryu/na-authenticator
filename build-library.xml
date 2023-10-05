@@ -1,0 +1,46 @@
+<project name="NA-Autheticator JAR builder" basedir="." default="jar">
+	<target name="clean">
+		<echo>Elimino los directorios de trabajo</echo>
+		<delete dir="build"/>
+		<delete>
+			<fileset dir="." includes="*.jar"/>
+		</delete>
+	</target>
+
+	<target name="init" depends="clean">
+		<echo>Preparo entorno</echo>
+		<property environment="env"/>
+		
+		<property name="debug"          value="on"/>
+		<property name="optimize"       value="off"/>
+		<property name="deprecation"    value="off"/>
+		<property name="build.compiler" value="modern"/>
+		<property name="target.vm"      value="1.7"/>		
+		<property name="dir.base"      value="build/na-authenticator"/>		
+		<path id="classpath">
+			<fileset dir="libs">
+				<include name="*.jar"/>
+			</fileset>
+		</path>
+	</target>
+
+	<target name="compila" depends="init">
+		<mkdir dir="${dir.base}"/>
+		<javac srcdir="src/java"
+			destdir="${dir.base}"
+			encoding="UTF-8"
+			debug="${debug}"
+			optimize="${optimize}"
+			deprecation="${deprecation}"
+			target="${target.vm}">
+			<classpath refid="classpath"/>
+		</javac>
+	</target>
+	
+	<target name="jar" depends="compila">
+		<echo>Genero el archivo JAR</echo>
+		<jar destfile="na-authenticator.jar" compress="true">
+			<fileset dir="${dir.base}"/>
+		</jar>
+	</target>
+</project>
