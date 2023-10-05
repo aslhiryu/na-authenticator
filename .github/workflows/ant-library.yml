@@ -26,14 +26,12 @@ jobs:
       with:
         java-version: '8'
         distribution: 'temurin'
+
     - name: Genera JAR 
       run: ant -noinput -buildfile build-library.xml
-#      - uses: actions/upload-artifact@v3
-#        with:
-#          name: Package
-#          path: build/jar
 
-#    - name: Publica el JAR en GitHub Packages Apache Maven
-#      run: mvn deploy -e -s $GITHUB_WORKSPACE/settings.xml -f reglas_negocio/pom.xml
-#      env:
-#        GITHUB_TOKEN: ${{ github.token }}
+    - name: Sube a repositorio el JAR
+      uses: actions/upload-artifact@v3
+      with:
+        name: na-authenticator.jar
+        path: ${{ github.workspace }}
