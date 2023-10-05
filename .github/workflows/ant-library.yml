@@ -27,7 +27,7 @@ jobs:
         java-version: '8'
         distribution: 'temurin'
     - name: Genera JAR 
-      - run: ant -noinput -buildfile build-library.xml
+      run: ant -noinput -buildfile build-library.xml
 #      - uses: actions/upload-artifact@v3
 #        with:
 #          name: Package
