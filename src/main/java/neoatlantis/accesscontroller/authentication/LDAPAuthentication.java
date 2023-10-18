@@ -1,4 +1,4 @@
-package neoAtlantis.utils.accessController.authentication;
+package neoatlantis.accesscontroller.authentication;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -19,15 +19,15 @@ import javax.naming.directory.DirContext;
 import javax.naming.directory.InitialDirContext;
 import javax.naming.directory.SearchControls;
 import javax.naming.directory.SearchResult;
-import neoAtlantis.utils.accessController.authentication.interfaces.AuthenticationWay;
-import neoAtlantis.utils.accessController.authentication.interfaces.ValidationResult;
-import neoAtlantis.utils.accessController.exceptions.WayAccessException;
-import neoAtlantis.utils.accessController.exceptions.WayConfigurationException;
-import neoAtlantis.utils.accessController.objects.EnvironmentType;
-import neoAtlantis.utils.accessController.objects.Role;
-import neoAtlantis.utils.accessController.objects.User;
-import neoAtlantis.utils.apps.catalogs.objetcs.OrderType;
-import neoAtlantis.utils.ldap.ConfigurationLDAP;
+import neoatlantis.accesscontroller.authentication.interfaces.AuthenticationWay;
+import neoatlantis.accesscontroller.authentication.interfaces.ValidationResult;
+import neoatlantis.accesscontroller.exceptions.WayAccessException;
+import neoatlantis.accesscontroller.exceptions.WayConfigurationException;
+import neoatlantis.accesscontroller.objects.EnvironmentType;
+import neoatlantis.accesscontroller.objects.Role;
+import neoatlantis.accesscontroller.objects.User;
+import neoatlantis.applications.catalogs.objetcs.OrderType;
+import neoatlantis.utils.ldap.ConfigurationLDAP;
 import org.apache.log4j.Logger;
 
 /**

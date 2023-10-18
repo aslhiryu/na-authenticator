@@ -1,10 +1,10 @@
-package neoAtlantis.utils.accessController.profiler.interfaces;
+package neoatlantis.accesscontroller.profiler.interfaces;
 
 import java.util.List;
 import java.util.Map;
-import neoAtlantis.utils.accessController.exceptions.WayAccessException;
-import neoAtlantis.utils.accessController.objects.Role;
-import neoAtlantis.utils.accessController.objects.User;
+import neoatlantis.accesscontroller.exceptions.WayAccessException;
+import neoatlantis.accesscontroller.objects.Role;
+import neoatlantis.accesscontroller.objects.User;
 
 /**
  * Interface que define el comportamiento con el que debe contar un Medio Perfilador

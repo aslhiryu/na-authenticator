@@ -1,14 +1,14 @@
-package neoAtlantis.utils.accessController.authentication;
+package neoatlantis.accesscontroller.authentication;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import neoAtlantis.utils.accessController.authentication.interfaces.AuthenticationWay;
-import neoAtlantis.utils.accessController.exceptions.WayAccessException;
-import neoAtlantis.utils.accessController.objects.EnvironmentType;
-import neoAtlantis.utils.accessController.objects.User;
-import neoAtlantis.utils.apps.catalogs.objetcs.OrderType;
+import neoatlantis.accesscontroller.authentication.interfaces.AuthenticationWay;
+import neoatlantis.accesscontroller.exceptions.WayAccessException;
+import neoatlantis.accesscontroller.objects.EnvironmentType;
+import neoatlantis.accesscontroller.objects.User;
+import neoatlantis.applications.catalogs.objetcs.OrderType;
 
 /**
  *

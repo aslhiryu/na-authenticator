@@ -1,12 +1,12 @@
-package neoAtlantis.utils.accessController.web.utils;
+package neoatlantis.accesscontroller.web.utils;
 
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import neoAtlantis.utils.accessController.objects.User;
-import neoAtlantis.utils.accessController.web.listeners.AccessControllerPublisher;
+import neoatlantis.accesscontroller.objects.User;
+import neoatlantis.accesscontroller.web.listeners.AccessControllerPublisher;
 import org.apache.log4j.Logger;
 
 /**

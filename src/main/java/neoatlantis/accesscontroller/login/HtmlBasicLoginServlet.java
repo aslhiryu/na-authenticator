@@ -1,4 +1,4 @@
-package neoAtlantis.utils.accessController.login;
+package neoatlantis.accesscontroller.login;
 
 import java.io.File;
 import java.io.IOException;
@@ -10,15 +10,15 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import neoAtlantis.utils.accessController.AccessController;
-import neoAtlantis.utils.accessController.authentication.interfaces.AuthenticationWay;
-import neoAtlantis.utils.accessController.login.interfaces.AuthenticationLogin;
-import neoAtlantis.utils.accessController.objects.EnvironmentType;
-import neoAtlantis.utils.accessController.objects.User;
-import neoAtlantis.utils.accessController.web.listeners.AccessControllerPublisher;
-import neoAtlantis.utils.accessController.web.listeners.BlockerSessionListener;
-import neoAtlantis.utils.apps.web.listeners.SessionListener;
-import neoAtlantis.utils.configurations.ConfigurationUtils;
+import neoatlantis.accesscontroller.AccessController;
+import neoatlantis.accesscontroller.authentication.interfaces.AuthenticationWay;
+import neoatlantis.accesscontroller.login.interfaces.AuthenticationLogin;
+import neoatlantis.accesscontroller.objects.EnvironmentType;
+import neoatlantis.accesscontroller.objects.User;
+import neoatlantis.accesscontroller.web.listeners.AccessControllerPublisher;
+import neoatlantis.accesscontroller.web.listeners.BlockerSessionListener;
+import neoatlantis.applications.web.listeners.SessionListener;
+import neoatlantis.utils.configurations.ConfigurationUtils;
 import org.apache.log4j.Logger;
 import org.jdom.Document;
 import org.jdom.Element;
@@ -70,7 +70,7 @@ public class HtmlBasicLoginServlet extends HttpServlet implements Authentication
     /**
      * M&eacuet;todo que inicializa al servlet, dentro del cual se realiz&aacute; 
      * la configuraci&oacute;n del servlet con base a lo que haya cargado el 
-     * {@link neoAtlantis.utilidades.accessController.utils.AccessControllerPublisher Configurador del Control de Acceso}
+     * {@link neoatlantis.utilidades.accesscontroller.AccessControllerPublisher Configurador del Control de Acceso}
      */
     @Override
     public void init(){

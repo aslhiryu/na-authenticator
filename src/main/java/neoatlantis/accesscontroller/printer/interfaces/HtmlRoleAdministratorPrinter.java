@@ -1,13 +1,13 @@
-package neoAtlantis.utils.accessController.printer.interfaces;
+package neoatlantis.accesscontroller.printer.interfaces;
 
 import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
-import neoAtlantis.utils.accessController.objects.Role;
-import neoAtlantis.utils.accessController.printer.SimpleHtmlLoginPrinter;
-import neoAtlantis.utils.accessController.web.UtilsAuthenticatorBean;
-import neoAtlantis.utils.accessController.web.utils.AuthenticationResourcesLoader;
-import neoAtlantis.utils.apps.printer.exceptions.FormatterException;
-import neoAtlantis.utils.apps.web.utils.ResourcesLoader;
+import neoatlantis.accesscontroller.objects.Role;
+import neoatlantis.accesscontroller.printer.SimpleHtmlLoginPrinter;
+import neoatlantis.accesscontroller.web.UtilsAuthenticatorBean;
+import neoatlantis.accesscontroller.web.utils.AuthenticationResourcesLoader;
+import neoatlantis.applications.printer.exceptions.FormatterException;
+import neoatlantis.applications.web.utils.ResourcesLoader;
 
 /**
  *

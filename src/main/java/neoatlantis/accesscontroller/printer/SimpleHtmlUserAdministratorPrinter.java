@@ -1,21 +1,21 @@
-package neoAtlantis.utils.accessController.printer;
+package neoatlantis.accesscontroller.printer;
 
 import java.util.List;
 import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
-import neoAtlantis.utils.accessController.AccessController;
-import neoAtlantis.utils.accessController.authentication.interfaces.AuthenticationWay;
-import neoAtlantis.utils.accessController.objects.Role;
-import neoAtlantis.utils.accessController.objects.User;
-import neoAtlantis.utils.accessController.printer.interfaces.UserAdministratorPrinter;
-import neoAtlantis.utils.accessController.web.UtilsAuthenticatorBean;
-import neoAtlantis.utils.accessController.web.listeners.AccessControllerPublisher;
-import neoAtlantis.utils.accessController.web.utils.AuthenticationResourcesLoader;
-import neoAtlantis.utils.apps.catalogs.objetcs.OrderType;
-import neoAtlantis.utils.apps.printer.exceptions.FormatterException;
-import neoAtlantis.utils.apps.utils.UtilsPagination;
-import neoAtlantis.utils.apps.web.utils.ParameterCleaner;
-import neoAtlantis.utils.apps.web.utils.ResourcesLoader;
+import neoatlantis.accesscontroller.AccessController;
+import neoatlantis.accesscontroller.authentication.interfaces.AuthenticationWay;
+import neoatlantis.accesscontroller.objects.Role;
+import neoatlantis.accesscontroller.objects.User;
+import neoatlantis.accesscontroller.printer.interfaces.UserAdministratorPrinter;
+import neoatlantis.accesscontroller.web.UtilsAuthenticatorBean;
+import neoatlantis.accesscontroller.web.listeners.AccessControllerPublisher;
+import neoatlantis.accesscontroller.web.utils.AuthenticationResourcesLoader;
+import neoatlantis.applications.catalogs.objetcs.OrderType;
+import neoatlantis.applications.printer.exceptions.FormatterException;
+import neoatlantis.applications.utils.UtilsPagination;
+import neoatlantis.applications.web.utils.ParameterCleaner;
+import neoatlantis.applications.web.utils.ResourcesLoader;
 
 /**
  *

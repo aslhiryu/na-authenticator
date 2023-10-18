@@ -1,22 +1,22 @@
-package neoAtlantis.utils.accessController.resourceAccessAllower.utils;
+package neoatlantis.accesscontroller.resourceAccessAllower.utils;
 
 import java.util.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import neoAtlantis.utils.accessController.AccessController;
-import neoAtlantis.utils.accessController.audit.interfaces.EventAudit;
-import neoAtlantis.utils.accessController.blocker.interfaces.BlockerWay;
-import neoAtlantis.utils.accessController.objects.User;
-import neoAtlantis.utils.accessController.resourceAccessAllower.interfaces.AccessEstatus;
-import neoAtlantis.utils.accessController.resourceAccessAllower.interfaces.DenialType;
-import neoAtlantis.utils.accessController.resourceAccessAllower.interfaces.FilterException;
-import neoAtlantis.utils.accessController.resourceAccessAllower.interfaces.ResourceAccessAllower;
-import neoAtlantis.utils.accessController.resourceAccessAllower.interfaces.TypeException;
-import neoAtlantis.utils.accessController.web.listeners.AccessControllerPublisher;
-import neoAtlantis.utils.accessController.web.listeners.BlockerSessionListener;
-import neoAtlantis.utils.apps.web.listeners.SessionListener;
-import neoAtlantis.utils.apps.web.objects.ApplicationSession;
-import neoAtlantis.utils.configurations.ClassGenerator;
+import neoatlantis.accesscontroller.AccessController;
+import neoatlantis.accesscontroller.audit.interfaces.EventAudit;
+import neoatlantis.accesscontroller.blocker.interfaces.BlockerWay;
+import neoatlantis.accesscontroller.objects.User;
+import neoatlantis.accesscontroller.resourceAccessAllower.interfaces.AccessEstatus;
+import neoatlantis.accesscontroller.resourceAccessAllower.interfaces.DenialType;
+import neoatlantis.accesscontroller.resourceAccessAllower.interfaces.FilterException;
+import neoatlantis.accesscontroller.resourceAccessAllower.interfaces.ResourceAccessAllower;
+import neoatlantis.accesscontroller.resourceAccessAllower.interfaces.TypeException;
+import neoatlantis.accesscontroller.web.listeners.AccessControllerPublisher;
+import neoatlantis.accesscontroller.web.listeners.BlockerSessionListener;
+import neoatlantis.applications.web.listeners.SessionListener;
+import neoatlantis.applications.web.objects.ApplicationSession;
+import neoatlantis.utils.configurations.ClassGenerator;
 import org.apache.log4j.Logger;
 import org.jdom.*;
 
@@ -203,7 +203,7 @@ public class ValidatorConfigurator {
     }
     
     /**
-     * Genera un evento en el {@link neoAtlantis.utilidades.accessController.audit.interfaces.AuditWay Medio Bitacorizador}
+     * Genera un evento en el {@link neoatlantis.utilidades.accesscontroller.audit.interfaces.AuditWay Medio Bitacorizador}
      * configurado en el Control de Acceso.
      * @param ctrl Control de Acceso
      * @param user Usuario que genera el evento

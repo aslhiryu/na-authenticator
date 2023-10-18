@@ -1,7 +1,7 @@
-package neoAtlantis.utils.accessController.printer.interfaces;
+package neoatlantis.accesscontroller.printer.interfaces;
 
 import java.util.Map;
-import neoAtlantis.utils.apps.printer.exceptions.FormatterException;
+import neoatlantis.applications.printer.exceptions.FormatterException;
 
 /**
  * Definición de lo que debe contemplar un impresor de login

@@ -1,10 +1,10 @@
-package neoAtlantis.utils.accessController.audit.interfaces;
+package neoatlantis.accesscontroller.audit.interfaces;
 
 import java.util.Map;
-import neoAtlantis.utils.accessController.exceptions.WayAccessException;
-import neoAtlantis.utils.accessController.objects.EnvironmentType;
-import neoAtlantis.utils.accessController.objects.User;
-import neoAtlantis.utils.objects.interfaces.EventRegister;
+import neoatlantis.accesscontroller.exceptions.WayAccessException;
+import neoatlantis.accesscontroller.objects.EnvironmentType;
+import neoatlantis.accesscontroller.objects.User;
+import neoatlantis.entity.interfaces.EventRegister;
 
 /**
  * Interface que define el comportamiento con el que debe contar un Medio Auditor

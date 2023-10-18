@@ -1,4 +1,4 @@
-package neoAtlantis.utils.accessController.authentication.interfaces;
+package neoatlantis.accesscontroller.authentication.interfaces;
 
 /**
  * Enumeraci&oacute;n que define los diferentes resultados que se pueden generar
@@ -45,7 +45,7 @@ public enum ValidationResult {
     IN_USE,
     /**
      * Constante que indica un acceso fuera de tiempo (en base a los Calendarios de Disponibilidad)
-     * @see neoAtlantis.utilidades.accessController.scheduler.interfaces.SchedulerWay
+     * @see neoatlantis.utilidades.accesscontroller.scheduler.interfaces.SchedulerWay
      */
     OUTTIME,
     /**

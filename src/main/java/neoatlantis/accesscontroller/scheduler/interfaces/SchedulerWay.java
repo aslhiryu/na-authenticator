@@ -1,6 +1,6 @@
-package neoAtlantis.utils.accessController.scheduler.interfaces;
+package neoatlantis.accesscontroller.scheduler.interfaces;
 
-import neoAtlantis.utils.accessController.exceptions.WayAccessException;
+import neoatlantis.accesscontroller.exceptions.WayAccessException;
 
 /**
  * Interface que define el comportamiento con el que debe contar un Medio Calendarizador.

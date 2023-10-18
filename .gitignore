@@ -2,3 +2,6 @@
 /na-authenticator.jar
 /nbproject/private/
 /dist/
+/target/
+
+.DS_Store

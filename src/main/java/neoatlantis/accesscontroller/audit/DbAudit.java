@@ -1,4 +1,4 @@
-package neoAtlantis.utils.accessController.audit;
+package neoatlantis.accesscontroller.audit;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -14,15 +14,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 import java.util.UUID;
-import neoAtlantis.utils.accessController.audit.interfaces.AuditWay;
-import neoAtlantis.utils.accessController.audit.interfaces.EventAudit;
-import neoAtlantis.utils.accessController.authentication.DbAuthentication;
-import neoAtlantis.utils.accessController.exceptions.WayAccessException;
-import neoAtlantis.utils.accessController.exceptions.WayConfigurationException;
-import neoAtlantis.utils.accessController.objects.LogEvent;
-import neoAtlantis.utils.accessController.objects.EnvironmentType;
-import neoAtlantis.utils.dataBase.ConfigurationDB;
-import neoAtlantis.utils.objects.Event;
+import neoatlantis.accesscontroller.audit.interfaces.AuditWay;
+import neoatlantis.accesscontroller.audit.interfaces.EventAudit;
+import neoatlantis.accesscontroller.authentication.DbAuthentication;
+import neoatlantis.accesscontroller.exceptions.WayAccessException;
+import neoatlantis.accesscontroller.exceptions.WayConfigurationException;
+import neoatlantis.accesscontroller.objects.LogEvent;
+import neoatlantis.accesscontroller.objects.EnvironmentType;
+import neoatlantis.entity.Event;
+import neoatlantis.utils.dataBase.ConfigurationDB;
 import org.apache.log4j.Logger;
 
 /**

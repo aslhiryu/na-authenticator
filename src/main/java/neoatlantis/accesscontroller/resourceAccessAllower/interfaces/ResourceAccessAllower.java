@@ -1,10 +1,10 @@
-package neoAtlantis.utils.accessController.resourceAccessAllower.interfaces;
+package neoatlantis.accesscontroller.resourceAccessAllower.interfaces;
 
 import java.util.ArrayList;
 import java.util.List;
-import neoAtlantis.utils.accessController.exceptions.WayAccessException;
-import neoAtlantis.utils.accessController.objects.Resource;
-import neoAtlantis.utils.accessController.objects.User;
+import neoatlantis.accesscontroller.exceptions.WayAccessException;
+import neoatlantis.accesscontroller.objects.Resource;
+import neoatlantis.accesscontroller.objects.User;
 
 /**
  * Interface que define el comportamiento con el que debe contar un Validador de 

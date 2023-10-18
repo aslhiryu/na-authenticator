@@ -1,8 +1,8 @@
-package neoAtlantis.utils.accessController.blocker.interfaces;
+package neoatlantis.accesscontroller.blocker.interfaces;
 
 import java.util.List;
-import neoAtlantis.utils.accessController.exceptions.WayAccessException;
-import neoAtlantis.utils.accessController.objects.User;
+import neoatlantis.accesscontroller.exceptions.WayAccessException;
+import neoatlantis.accesscontroller.objects.User;
 
 /**
  * Interface que define el comportamiento con el que debe contar un Medio Bloqueador
@@ -46,21 +46,21 @@ public abstract class BlockerWay {
     /**
      * Definici&oacute;n del metodo para agregar bloqueos de usuario.
      * @param user Usuario a bloquear
-     * @throws neoAtlantis.utils.accessController.exceptions.WayAccessException
+     * @throws neoatlantis.accesscontroller.exceptions.WayAccessException
      */
     public abstract void addBlock(User user) throws WayAccessException;
 
     /**
      * Definici&oacute;n del metodo para revisar los bloqueos que ya hayan finalizado.
      * @return Colecci&oacute;n con los nombres de los usuarios de los cuales termino su bloqueo.
-     * @throws neoAtlantis.utils.accessController.exceptions.WayAccessException
+     * @throws neoatlantis.accesscontroller.exceptions.WayAccessException
      */
     public abstract List<User> validateEndedBlocks() throws WayAccessException;
 
     /**
      * Definici&oacute;n del metodo para revisar las sesiones que ya hayan finalizado.
      * @return Colecci&oacute;n con los usuarios que expiraron sus sesiones.
-     * @throws neoAtlantis.utils.accessController.exceptions.WayAccessException
+     * @throws neoatlantis.accesscontroller.exceptions.WayAccessException
      */
     public abstract List<User> validateInactiveSessions() throws WayAccessException;
 
@@ -68,7 +68,7 @@ public abstract class BlockerWay {
      * Definici&oacute;n del metodo que revisa si un usuario esta bloqueado.
      * @param user Usuario del que se desea verificar su bloqueo
      * @return true si existe bloqueo
-     * @throws neoAtlantis.utils.accessController.exceptions.WayAccessException
+     * @throws neoatlantis.accesscontroller.exceptions.WayAccessException
      */
     public abstract boolean validateBlock(User user) throws WayAccessException;
 
@@ -76,14 +76,14 @@ public abstract class BlockerWay {
      * Definici&oacute;n del metodo para remover bloqueos de usuario.
      * @param user Usuario del que se desea terminar el bloqueo
      * @return true si se logro remover el bloqueo
-     * @throws neoAtlantis.utils.accessController.exceptions.WayAccessException
+     * @throws neoatlantis.accesscontroller.exceptions.WayAccessException
      */
     public abstract boolean removeBlock(User user) throws WayAccessException;
 
     /**
      * Definici&oacute;n del metodo para agregar la conexi&oacute;n de un usuario.
      * @param user Usuario del que se desea registrar su conexi&oacute;n
-     * @throws neoAtlantis.utils.accessController.exceptions.WayAccessException
+     * @throws neoatlantis.accesscontroller.exceptions.WayAccessException
      */
     public abstract void addConnection(User user) throws WayAccessException;
 
@@ -91,7 +91,7 @@ public abstract class BlockerWay {
      * Definici&oacute;n del metodo para remover la conexi&oacute;n de un usuario.
      * @param user Usuario del que se desea remover su conexi&oacute;n
      * @return true si se logro remover la conexi&oacute;n
-     * @throws neoAtlantis.utils.accessController.exceptions.WayAccessException
+     * @throws neoatlantis.accesscontroller.exceptions.WayAccessException
      */
     public abstract boolean removeConnection(User user) throws WayAccessException;
 
@@ -99,35 +99,35 @@ public abstract class BlockerWay {
      * Definici&oacute;n del metodo que revisa si un usuario esta conectado.
      * @param user Usuario del que se desea revisar su conexi&oacute;n
      * @return true si tiene una conexi&oacute;n activa
-     * @throws neoAtlantis.utils.accessController.exceptions.WayAccessException
+     * @throws neoatlantis.accesscontroller.exceptions.WayAccessException
      */
     public abstract boolean validateConnection(User user) throws WayAccessException;
 
     /**
      * Definici&oacute;n del metodo para recuperar los datos del usuario conectado solicitado
      * @param id Identificador del usuario
-     * @throws neoAtlantis.utils.accessController.exceptions.WayAccessException
+     * @throws neoatlantis.accesscontroller.exceptions.WayAccessException
      */
     public abstract User getConnectedUser(String id) throws WayAccessException;
     
     /**
      * Definici&oacute;n del metodo para recuperar los datos del usuario conectado por su sesi&oacute;n
      * @param session Sesi&oacute;n del usuario
-     * @throws neoAtlantis.utils.accessController.exceptions.WayAccessException
+     * @throws neoatlantis.accesscontroller.exceptions.WayAccessException
      */
     public abstract User getConnectedUserBySession(String session) throws WayAccessException;
 
     /**
      * Definici&oacute;n del metodo para recuperar los datos del usuario bloqueado solicitado
      * @param id Identificador del usuario
-     * @throws neoAtlantis.utils.accessController.exceptions.WayAccessException
+     * @throws neoatlantis.accesscontroller.exceptions.WayAccessException
      */
     public abstract User getBlockedUser(String id) throws WayAccessException;
 
     /**
      * Definici&oacute;n del metodo para actualizar la actividad de la conexion existente
      * @param user  Usuario del que se desea actualizar el estado de la conexi&oacute;n
-     * @throws neoAtlantis.utils.accessController.exceptions.WayAccessException
+     * @throws neoatlantis.accesscontroller.exceptions.WayAccessException
      */
     public abstract void updateActivity(User user) throws WayAccessException;
 

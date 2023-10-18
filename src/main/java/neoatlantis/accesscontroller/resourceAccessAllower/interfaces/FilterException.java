@@ -1,8 +1,8 @@
-package neoAtlantis.utils.accessController.resourceAccessAllower.interfaces;
+package neoatlantis.accesscontroller.resourceAccessAllower.interfaces;
 
 /**
  * Definici&oacute;n de una excepci&oacute;n del filtro de acceso, el cual se 
- * evalua por {@link neoAtlantis.utilidades.accessController.resourcesFilter.interfaces.ResourceAccessAllower Validador de Accesos a Recursos}
+ * evalua por {@link neoatlantis.utilidades.accesscontroller.resourcesFilter.interfaces.ResourceAccessAllower Validador de Accesos a Recursos}
  * @author Hiryu (aslhiryu@gmail.com)
  * @version 1.0
  */

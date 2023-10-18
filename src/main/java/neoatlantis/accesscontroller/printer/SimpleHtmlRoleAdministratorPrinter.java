@@ -1,18 +1,18 @@
-package neoAtlantis.utils.accessController.printer;
+package neoatlantis.accesscontroller.printer;
 
 import java.util.List;
 import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
-import neoAtlantis.utils.accessController.AccessController;
-import neoAtlantis.utils.accessController.objects.Permission;
-import neoAtlantis.utils.accessController.objects.Role;
-import neoAtlantis.utils.accessController.objects.User;
-import neoAtlantis.utils.accessController.printer.interfaces.HtmlRoleAdministratorPrinter;
-import neoAtlantis.utils.accessController.printer.interfaces.RoleAdministratorPrinter;
-import neoAtlantis.utils.accessController.profiler.interfaces.ProfilerWay;
-import neoAtlantis.utils.accessController.web.UtilsAuthenticatorBean;
-import neoAtlantis.utils.accessController.web.listeners.AccessControllerPublisher;
-import neoAtlantis.utils.apps.printer.exceptions.FormatterException;
+import neoatlantis.accesscontroller.AccessController;
+import neoatlantis.accesscontroller.objects.Permission;
+import neoatlantis.accesscontroller.objects.Role;
+import neoatlantis.accesscontroller.objects.User;
+import neoatlantis.accesscontroller.printer.interfaces.HtmlRoleAdministratorPrinter;
+import neoatlantis.accesscontroller.printer.interfaces.RoleAdministratorPrinter;
+import neoatlantis.accesscontroller.profiler.interfaces.ProfilerWay;
+import neoatlantis.accesscontroller.web.UtilsAuthenticatorBean;
+import neoatlantis.accesscontroller.web.listeners.AccessControllerPublisher;
+import neoatlantis.applications.printer.exceptions.FormatterException;
 
 /**
  *

@@ -1,4 +1,4 @@
-package neoAtlantis.utils.accessController.resourceAccessAllower;
+package neoatlantis.accesscontroller.resourceAccessAllower;
 
 import java.io.*;
 import java.util.*;
@@ -11,17 +11,17 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import neoAtlantis.utils.accessController.exceptions.WayConfigurationException;
-import neoAtlantis.utils.accessController.objects.User;
-import neoAtlantis.utils.accessController.resourceAccessAllower.interfaces.AccessEstatus;
-import neoAtlantis.utils.accessController.resourceAccessAllower.interfaces.DenialType;
-import neoAtlantis.utils.accessController.resourceAccessAllower.interfaces.FilterException;
-import neoAtlantis.utils.accessController.resourceAccessAllower.interfaces.ResourceAccessAllower;
-import neoAtlantis.utils.accessController.resourceAccessAllower.utils.ValidatorConfigurator;
-import neoAtlantis.utils.accessController.web.listeners.AccessControllerPublisher;
-import neoAtlantis.utils.accessController.web.listeners.BlockerSessionListener;
-import neoAtlantis.utils.apps.web.listeners.SessionListener;
-import neoAtlantis.utils.apps.web.objects.UserRequest;
+import neoatlantis.accesscontroller.exceptions.WayConfigurationException;
+import neoatlantis.accesscontroller.objects.User;
+import neoatlantis.accesscontroller.resourceAccessAllower.interfaces.AccessEstatus;
+import neoatlantis.accesscontroller.resourceAccessAllower.interfaces.DenialType;
+import neoatlantis.accesscontroller.resourceAccessAllower.interfaces.FilterException;
+import neoatlantis.accesscontroller.resourceAccessAllower.interfaces.ResourceAccessAllower;
+import neoatlantis.accesscontroller.resourceAccessAllower.utils.ValidatorConfigurator;
+import neoatlantis.accesscontroller.web.listeners.AccessControllerPublisher;
+import neoatlantis.accesscontroller.web.listeners.BlockerSessionListener;
+import neoatlantis.applications.web.listeners.SessionListener;
+import neoatlantis.applications.web.objects.UserRequest;
 import org.apache.log4j.Logger;
 import org.jdom.*;
 import org.jdom.input.SAXBuilder;
@@ -69,7 +69,7 @@ import org.jdom.input.SAXBuilder;
  * en el momento que el validador encuentre al menos un rol y permiso asignado al 
  * usuario permitir&aacute; el acceso al recurso.<br><br>
  * Se pueden utilizar de comodin el rol <b>USUARIO</b> y el permiso <b>LOGEADO</b>
- * dado que estos valores los asigna el {@link neoAtlantis.utilidades.accessController.AccessController Control de Autenticaci&oacute;n} 
+ * dado que estos valores los asigna el {@link neoatlantis.utilidades.accesscontroller.AccessController Control de Autenticaci&oacute;n} 
  * a todos los usuarios al momento de iniciar sesi&oacute;n.
  * @author Hiryu (aslhiryu@gmail.com)
  * @version 2.0

@@ -1,4 +1,4 @@
-package neoAtlantis.utils.accessController.blocker.interfaces;
+package neoatlantis.accesscontroller.blocker.interfaces;
 
 /**
  * Enumeraci&oacute;n que define los tipos de bloqueo que se pueden realizar.

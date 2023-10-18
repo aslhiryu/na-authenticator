@@ -1,6 +1,6 @@
-package neoAtlantis.utils.accessController.scheduler;
+package neoatlantis.accesscontroller.scheduler;
 
-import neoAtlantis.utils.accessController.scheduler.interfaces.SchedulerWay;
+import neoatlantis.accesscontroller.scheduler.interfaces.SchedulerWay;
 
 /**
  * Calendario de disponibilidad con disponibilidad total

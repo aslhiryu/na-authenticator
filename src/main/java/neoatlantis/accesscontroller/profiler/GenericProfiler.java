@@ -1,12 +1,12 @@
-package neoAtlantis.utils.accessController.profiler;
+package neoatlantis.accesscontroller.profiler;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import neoAtlantis.utils.accessController.exceptions.WayAccessException;
-import neoAtlantis.utils.accessController.objects.Role;
-import neoAtlantis.utils.accessController.objects.User;
-import neoAtlantis.utils.accessController.profiler.interfaces.ProfilerWay;
+import neoatlantis.accesscontroller.exceptions.WayAccessException;
+import neoatlantis.accesscontroller.objects.Role;
+import neoatlantis.accesscontroller.objects.User;
+import neoatlantis.accesscontroller.profiler.interfaces.ProfilerWay;
 
 /**
  *

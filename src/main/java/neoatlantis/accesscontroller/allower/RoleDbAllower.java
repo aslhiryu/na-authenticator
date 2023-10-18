@@ -1,4 +1,4 @@
-package neoAtlantis.utils.accessController.allower;
+package neoatlantis.accesscontroller.allower;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -11,13 +11,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
-import neoAtlantis.utils.accessController.allower.interfaces.AllowerWay;
-import neoAtlantis.utils.accessController.exceptions.WayAccessException;
-import neoAtlantis.utils.accessController.exceptions.WayConfigurationException;
-import neoAtlantis.utils.accessController.objects.Permission;
-import neoAtlantis.utils.accessController.objects.Role;
-import neoAtlantis.utils.accessController.objects.User;
-import neoAtlantis.utils.dataBase.ConfigurationDB;
+import neoatlantis.accesscontroller.allower.interfaces.AllowerWay;
+import neoatlantis.accesscontroller.exceptions.WayAccessException;
+import neoatlantis.accesscontroller.exceptions.WayConfigurationException;
+import neoatlantis.accesscontroller.objects.Permission;
+import neoatlantis.accesscontroller.objects.Role;
+import neoatlantis.accesscontroller.objects.User;
+import neoatlantis.utils.dataBase.ConfigurationDB;
 import org.apache.log4j.Logger;
 
 /**

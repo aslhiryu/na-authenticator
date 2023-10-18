@@ -1,12 +1,12 @@
-package neoAtlantis.utils.accessController.exceptions;
+package neoatlantis.accesscontroller.exceptions;
 
 /**
- * Excepci&oacute;n generada los diferentes medios ({@link neoAtlantis.utilidades.accessController.allower.interfaces.AllowerWay Permisor}, 
- * {@link neoAtlantis.utilidades.accessController.audit.interfaces.AuditWay Auditor},
- * {@link neoAtlantis.utilidades.accessController.authentication.interfaces.AuthenticationWay Autenticador},
- * {@link neoAtlantis.utilidades.accessController.blocker.interfaces.BlockerWay Bloqueador},
- * {@link neoAtlantis.utilidades.accessController.profiler.interfaces.ProfilerWay Perfilador},
- * {@link neoAtlantis.utilidades.accessController.scheduler.interfaces.SchedulerWay Calendarizador}) 
+ * Excepci&oacute;n generada los diferentes medios ({@link neoatlantis.utilidades.accesscontroller.allower.interfaces.AllowerWay Permisor}, 
+ * {@link neoatlantis.utilidades.accesscontroller.audit.interfaces.AuditWay Auditor},
+ * {@link neoatlantis.utilidades.accesscontroller.authentication.interfaces.AuthenticationWay Autenticador},
+ * {@link neoatlantis.utilidades.accesscontroller.blocker.interfaces.BlockerWay Bloqueador},
+ * {@link neoatlantis.utilidades.accesscontroller.profiler.interfaces.ProfilerWay Perfilador},
+ * {@link neoatlantis.utilidades.accesscontroller.scheduler.interfaces.SchedulerWay Calendarizador}) 
  * al cargar su configuraci&oacute;n.
  * @author Hiryu (aslhiryu@gmail.com)
  * @version 1.0

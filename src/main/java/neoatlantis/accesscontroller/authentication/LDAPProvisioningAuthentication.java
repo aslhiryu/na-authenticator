@@ -1,4 +1,4 @@
-package neoAtlantis.utils.accessController.authentication;
+package neoatlantis.accesscontroller.authentication;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -25,21 +25,21 @@ import javax.naming.directory.DirContext;
 import javax.naming.directory.InitialDirContext;
 import javax.naming.directory.SearchControls;
 import javax.naming.directory.SearchResult;
-import static neoAtlantis.utils.accessController.authentication.LDAPAuthentication.getDNString;
-import neoAtlantis.utils.accessController.authentication.interfaces.AuthenticationWay;
-import neoAtlantis.utils.accessController.authentication.interfaces.ValidationResult;
-import neoAtlantis.utils.accessController.blocker.interfaces.BlockerWay;
-import neoAtlantis.utils.accessController.exceptions.WayAccessException;
-import neoAtlantis.utils.accessController.exceptions.WayConfigurationException;
-import neoAtlantis.utils.accessController.objects.EnvironmentType;
-import neoAtlantis.utils.accessController.objects.User;
-import neoAtlantis.utils.accessController.printer.SimpleHtmlUserAdministratorPrinter;
-import neoAtlantis.utils.accessController.printer.interfaces.UserAdministratorPrinter;
-import neoAtlantis.utils.apps.catalogs.objetcs.MemoryColumn;
-import neoAtlantis.utils.apps.catalogs.objetcs.MemoryTable;
-import neoAtlantis.utils.apps.catalogs.objetcs.OrderType;
-import neoAtlantis.utils.data.DataUtils;
-import neoAtlantis.utils.dataBase.ConfigurationDB;
+import static neoatlantis.accesscontroller.authentication.LDAPAuthentication.getDNString;
+import neoatlantis.accesscontroller.authentication.interfaces.AuthenticationWay;
+import neoatlantis.accesscontroller.authentication.interfaces.ValidationResult;
+import neoatlantis.accesscontroller.blocker.interfaces.BlockerWay;
+import neoatlantis.accesscontroller.exceptions.WayAccessException;
+import neoatlantis.accesscontroller.exceptions.WayConfigurationException;
+import neoatlantis.accesscontroller.objects.EnvironmentType;
+import neoatlantis.accesscontroller.objects.User;
+import neoatlantis.accesscontroller.printer.SimpleHtmlUserAdministratorPrinter;
+import neoatlantis.accesscontroller.printer.interfaces.UserAdministratorPrinter;
+import neoatlantis.applications.catalogs.objetcs.MemoryColumn;
+import neoatlantis.applications.catalogs.objetcs.MemoryTable;
+import neoatlantis.applications.catalogs.objetcs.OrderType;
+import neoatlantis.utils.data.DataUtils;
+import neoatlantis.utils.dataBase.ConfigurationDB;
 import org.apache.log4j.Logger;
 
 /**

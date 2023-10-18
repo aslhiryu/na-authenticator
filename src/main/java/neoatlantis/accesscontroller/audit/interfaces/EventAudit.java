@@ -1,4 +1,4 @@
-package neoAtlantis.utils.accessController.audit.interfaces;
+package neoatlantis.accesscontroller.audit.interfaces;
 
 /**
  * Enumeraci&oacute;n que define los eventos que se pueden generar por la bitacora

@@ -1,4 +1,4 @@
-package neoAtlantis.utils.accessController.web.listeners;
+package neoatlantis.accesscontroller.web.listeners;
 
 import java.util.Date;
 import java.util.List;
@@ -11,10 +11,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;
-import neoAtlantis.utils.accessController.AccessController;
-import neoAtlantis.utils.accessController.objects.User;
-import neoAtlantis.utils.apps.web.listeners.ApplicationListener;
-import neoAtlantis.utils.apps.web.objects.ApplicationSession;
+import neoatlantis.accesscontroller.AccessController;
+import neoatlantis.accesscontroller.objects.User;
+import neoatlantis.applications.web.listeners.ApplicationListener;
+import neoatlantis.applications.web.objects.ApplicationSession;
 import org.apache.log4j.Logger;
 
 /**

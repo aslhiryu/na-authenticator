@@ -1,18 +1,18 @@
-package neoAtlantis.utils.accessController.printer;
+package neoatlantis.accesscontroller.printer;
 
 import java.text.SimpleDateFormat;
 import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
-import neoAtlantis.utils.accessController.AccessController;
-import neoAtlantis.utils.accessController.authentication.interfaces.AuthenticationWay;
-import neoAtlantis.utils.accessController.login.HtmlBasicLoginServlet;
-import neoAtlantis.utils.accessController.objects.User;
-import neoAtlantis.utils.accessController.printer.interfaces.LoginPrinter;
-import neoAtlantis.utils.accessController.web.UtilsAuthenticatorBean;
-import neoAtlantis.utils.accessController.web.listeners.AccessControllerPublisher;
-import neoAtlantis.utils.accessController.web.utils.PhotoUserServlet;
-import neoAtlantis.utils.apps.printer.exceptions.FormatterException;
-import neoAtlantis.utils.apps.web.UtilsApplicationBean;
+import neoatlantis.accesscontroller.AccessController;
+import neoatlantis.accesscontroller.authentication.interfaces.AuthenticationWay;
+import neoatlantis.accesscontroller.login.HtmlBasicLoginServlet;
+import neoatlantis.accesscontroller.objects.User;
+import neoatlantis.accesscontroller.printer.interfaces.LoginPrinter;
+import neoatlantis.accesscontroller.web.UtilsAuthenticatorBean;
+import neoatlantis.accesscontroller.web.listeners.AccessControllerPublisher;
+import neoatlantis.accesscontroller.web.utils.PhotoUserServlet;
+import neoatlantis.applications.printer.exceptions.FormatterException;
+import neoatlantis.applications.web.UtilsApplicationBean;
 
 /**
  * 

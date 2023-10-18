@@ -1,4 +1,4 @@
-package neoAtlantis.utils.accessController.profiler;
+package neoatlantis.accesscontroller.profiler;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -13,13 +13,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 import java.util.UUID;
-import neoAtlantis.utils.accessController.exceptions.WayAccessException;
-import neoAtlantis.utils.accessController.exceptions.WayConfigurationException;
-import neoAtlantis.utils.accessController.objects.Role;
-import neoAtlantis.utils.accessController.objects.User;
-import neoAtlantis.utils.accessController.printer.interfaces.UserAdministratorPrinter;
-import neoAtlantis.utils.accessController.profiler.interfaces.ProfilerWay;
-import neoAtlantis.utils.dataBase.ConfigurationDB;
+import neoatlantis.accesscontroller.exceptions.WayAccessException;
+import neoatlantis.accesscontroller.exceptions.WayConfigurationException;
+import neoatlantis.accesscontroller.objects.Role;
+import neoatlantis.accesscontroller.objects.User;
+import neoatlantis.accesscontroller.printer.interfaces.UserAdministratorPrinter;
+import neoatlantis.accesscontroller.profiler.interfaces.ProfilerWay;
+import neoatlantis.utils.dataBase.ConfigurationDB;
 import org.apache.log4j.Logger;
 
 /**

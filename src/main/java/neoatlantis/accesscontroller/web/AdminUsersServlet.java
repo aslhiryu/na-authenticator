@@ -1,14 +1,14 @@
-package neoAtlantis.utils.accessController.web;
+package neoatlantis.accesscontroller.web;
 
 import java.io.IOException;
 import java.util.Map;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import neoAtlantis.utils.accessController.AccessController;
-import neoAtlantis.utils.accessController.objects.User;
-import neoAtlantis.utils.accessController.web.listeners.AccessControllerPublisher;
-import neoAtlantis.utils.apps.web.utils.ParameterCleaner;
+import neoatlantis.accesscontroller.AccessController;
+import neoatlantis.accesscontroller.objects.User;
+import neoatlantis.accesscontroller.web.listeners.AccessControllerPublisher;
+import neoatlantis.applications.web.utils.ParameterCleaner;
 import org.apache.log4j.Logger;
 
 /**

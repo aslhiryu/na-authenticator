@@ -1,4 +1,4 @@
-package neoAtlantis.utils.accessController.utils;
+package neoatlantis.accesscontroller.utils;
 
 /**
  *

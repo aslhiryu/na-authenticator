@@ -1,7 +1,7 @@
-package neoAtlantis.utils.accessController.login.interfaces;
+package neoatlantis.accesscontroller.login.interfaces;
 
 import java.util.Map;
-import neoAtlantis.utils.accessController.objects.User;
+import neoatlantis.accesscontroller.objects.User;
 
 /**
  *Interface que define el comportamiento que debe considerar un login

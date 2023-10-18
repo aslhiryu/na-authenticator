@@ -1,15 +1,15 @@
-package neoAtlantis.utils.accessController.blocker;
+package neoatlantis.accesscontroller.blocker;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import javax.servlet.ServletContext;
-import neoAtlantis.utils.accessController.blocker.interfaces.BlockType;
-import neoAtlantis.utils.accessController.blocker.interfaces.BlockerWay;
-import neoAtlantis.utils.accessController.exceptions.WayAccessException;
-import neoAtlantis.utils.accessController.objects.User;
-import neoAtlantis.utils.accessController.web.listeners.BlockerSessionListener;
+import neoatlantis.accesscontroller.blocker.interfaces.BlockType;
+import neoatlantis.accesscontroller.blocker.interfaces.BlockerWay;
+import neoatlantis.accesscontroller.exceptions.WayAccessException;
+import neoatlantis.accesscontroller.objects.User;
+import neoatlantis.accesscontroller.web.listeners.BlockerSessionListener;
 import org.apache.log4j.Logger;
 
 /**

@@ -1,21 +1,21 @@
-package neoAtlantis.utils.accessController.web;
+package neoatlantis.accesscontroller.web;
 
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
-import neoAtlantis.utils.accessController.AccessController;
-import neoAtlantis.utils.accessController.authentication.interfaces.AuthenticationWay;
-import neoAtlantis.utils.accessController.objects.Role;
-import neoAtlantis.utils.accessController.objects.User;
-import neoAtlantis.utils.accessController.printer.SimpleHtmlLoginPrinter;
-import neoAtlantis.utils.accessController.printer.interfaces.AuditPrinter;
-import neoAtlantis.utils.accessController.printer.interfaces.LoginPrinter;
-import neoAtlantis.utils.accessController.printer.interfaces.RoleAdministratorPrinter;
-import neoAtlantis.utils.accessController.printer.interfaces.UserAdministratorPrinter;
-import neoAtlantis.utils.accessController.profiler.interfaces.ProfilerWay;
-import neoAtlantis.utils.accessController.web.listeners.AccessControllerPublisher;
-import neoAtlantis.utils.accessController.web.utils.AuthenticationResourcesLoader;
+import neoatlantis.accesscontroller.AccessController;
+import neoatlantis.accesscontroller.authentication.interfaces.AuthenticationWay;
+import neoatlantis.accesscontroller.objects.Role;
+import neoatlantis.accesscontroller.objects.User;
+import neoatlantis.accesscontroller.printer.SimpleHtmlLoginPrinter;
+import neoatlantis.accesscontroller.printer.interfaces.AuditPrinter;
+import neoatlantis.accesscontroller.printer.interfaces.LoginPrinter;
+import neoatlantis.accesscontroller.printer.interfaces.RoleAdministratorPrinter;
+import neoatlantis.accesscontroller.printer.interfaces.UserAdministratorPrinter;
+import neoatlantis.accesscontroller.profiler.interfaces.ProfilerWay;
+import neoatlantis.accesscontroller.web.listeners.AccessControllerPublisher;
+import neoatlantis.accesscontroller.web.utils.AuthenticationResourcesLoader;
 import org.apache.log4j.Logger;
 
 /**

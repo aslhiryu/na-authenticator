@@ -1,8 +1,8 @@
-package neoAtlantis.utils.accessController.web.utils;
+package neoatlantis.accesscontroller.web.utils;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletRegistration.Dynamic;
-import neoAtlantis.utils.apps.web.utils.ElementPublisherServlet;
+import neoatlantis.applications.web.utils.ElementPublisherServlet;
 import org.apache.log4j.Logger;
 
 /**

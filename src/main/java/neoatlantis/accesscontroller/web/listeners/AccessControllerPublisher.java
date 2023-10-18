@@ -1,4 +1,4 @@
-package neoAtlantis.utils.accessController.web.listeners;
+package neoatlantis.accesscontroller.web.listeners;
 
 import java.io.File;
 import java.util.Arrays;
@@ -11,34 +11,34 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.http.HttpServlet;
-import neoAtlantis.utils.accessController.AccessController;
-import neoAtlantis.utils.accessController.allower.interfaces.AllowerWay;
-import neoAtlantis.utils.accessController.audit.interfaces.AuditWay;
-import neoAtlantis.utils.accessController.audit.interfaces.LevelAudit;
-import neoAtlantis.utils.accessController.authentication.interfaces.AuthenticationWay;
-import neoAtlantis.utils.accessController.blocker.MemoryBlocker;
-import neoAtlantis.utils.accessController.blocker.interfaces.BlockType;
-import neoAtlantis.utils.accessController.blocker.interfaces.BlockerWay;
-import neoAtlantis.utils.accessController.printer.interfaces.LoginPrinter;
-import neoAtlantis.utils.accessController.login.interfaces.AuthenticationLogin;
-import neoAtlantis.utils.accessController.printer.interfaces.AuditPrinter;
-import neoAtlantis.utils.accessController.printer.interfaces.RoleAdministratorPrinter;
-import neoAtlantis.utils.accessController.printer.interfaces.UserAdministratorPrinter;
-import neoAtlantis.utils.accessController.profiler.GenericProfiler;
-import neoAtlantis.utils.accessController.profiler.interfaces.ProfilerWay;
-import neoAtlantis.utils.accessController.resourceAccessAllower.interfaces.ResourceAccessAllower;
-import neoAtlantis.utils.accessController.scheduler.GeneralScheduler;
-import neoAtlantis.utils.accessController.scheduler.interfaces.SchedulerWay;
-import neoAtlantis.utils.accessController.utils.DefaultErrorMessages;
-import neoAtlantis.utils.accessController.web.AdminUsersServlet;
-import neoAtlantis.utils.accessController.web.utils.AuthenticationResourcesLoader;
-import neoAtlantis.utils.accessController.web.utils.PhotoUserServlet;
-import neoAtlantis.utils.apps.web.listeners.ApplicationListener;
-import neoAtlantis.utils.cipher.CipherMd5Des;
-import neoAtlantis.utils.cipher.interfaces.DataCipher;
-import neoAtlantis.utils.configurations.ClassGenerator;
-import neoAtlantis.utils.configurations.ConfigurationUtils;
-import neoAtlantis.utils.data.DataUtils;
+import neoatlantis.accesscontroller.AccessController;
+import neoatlantis.accesscontroller.allower.interfaces.AllowerWay;
+import neoatlantis.accesscontroller.audit.interfaces.AuditWay;
+import neoatlantis.accesscontroller.audit.interfaces.LevelAudit;
+import neoatlantis.accesscontroller.authentication.interfaces.AuthenticationWay;
+import neoatlantis.accesscontroller.blocker.MemoryBlocker;
+import neoatlantis.accesscontroller.blocker.interfaces.BlockType;
+import neoatlantis.accesscontroller.blocker.interfaces.BlockerWay;
+import neoatlantis.accesscontroller.printer.interfaces.LoginPrinter;
+import neoatlantis.accesscontroller.login.interfaces.AuthenticationLogin;
+import neoatlantis.accesscontroller.printer.interfaces.AuditPrinter;
+import neoatlantis.accesscontroller.printer.interfaces.RoleAdministratorPrinter;
+import neoatlantis.accesscontroller.printer.interfaces.UserAdministratorPrinter;
+import neoatlantis.accesscontroller.profiler.GenericProfiler;
+import neoatlantis.accesscontroller.profiler.interfaces.ProfilerWay;
+import neoatlantis.accesscontroller.resourceAccessAllower.interfaces.ResourceAccessAllower;
+import neoatlantis.accesscontroller.scheduler.GeneralScheduler;
+import neoatlantis.accesscontroller.scheduler.interfaces.SchedulerWay;
+import neoatlantis.accesscontroller.utils.DefaultErrorMessages;
+import neoatlantis.accesscontroller.web.AdminUsersServlet;
+import neoatlantis.accesscontroller.web.utils.AuthenticationResourcesLoader;
+import neoatlantis.accesscontroller.web.utils.PhotoUserServlet;
+import neoatlantis.applications.web.listeners.ApplicationListener;
+import neoatlantis.utils.cipher.CipherMd5Des;
+import neoatlantis.utils.cipher.interfaces.DataCipher;
+import neoatlantis.utils.configurations.ClassGenerator;
+import neoatlantis.utils.configurations.ConfigurationUtils;
+import neoatlantis.utils.data.DataUtils;
 import org.apache.log4j.Logger;
 import org.jdom.Document;
 import org.jdom.Element;
@@ -146,7 +146,7 @@ public class AccessControllerPublisher implements ServletContextListener{
     private void finalizeEnvironment(ServletContext context){
         //remueve el registro del MBean de sesiones
         String app=(String)context.getAttribute(ApplicationListener.APP_NAME_KEY);
-        ApplicationListener.unregisterMBean("neoAtlantis.app."+(app!=null? DataUtils.cleanSpecialCharacters(app): "undefined")+".users.jmx:type=InfoStatusUsers");
+        ApplicationListener.unregisterMBean("neoatlantis.app."+(app!=null? DataUtils.cleanSpecialCharacters(app): "undefined")+".users.jmx:type=InfoStatusUsers");
     }
     
 

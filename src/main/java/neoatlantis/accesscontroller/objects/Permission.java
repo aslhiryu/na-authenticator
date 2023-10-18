@@ -1,9 +1,9 @@
-package neoAtlantis.utils.accessController.objects;
+package neoatlantis.accesscontroller.objects;
 
 import java.io.Serializable;
 
 /**
- * Definici&oacute;n d eun permiso.
+ * Definici&oacute;n de un permiso.
  * @author Hiryu (aslhiryu@gmail.com)
  * @version 2.0
  */

@@ -1,7 +1,7 @@
-package neoAtlantis.utils.accessController.objects;
+package neoatlantis.accesscontroller.objects;
 
-import neoAtlantis.utils.accessController.audit.interfaces.EventAudit;
-import neoAtlantis.utils.objects.Event;
+import neoatlantis.accesscontroller.audit.interfaces.EventAudit;
+import neoatlantis.entity.Event;
 
 /**
  * Definici&oacute;n de un evento en la bitacora.

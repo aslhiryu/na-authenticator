@@ -1,4 +1,4 @@
-package neoAtlantis.utils.accessController.jmx;
+package neoatlantis.accesscontroller.jmx;
 
 /**
  *

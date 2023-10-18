@@ -1,4 +1,4 @@
-package neoAtlantis.utils.accessController.printer;
+package neoatlantis.accesscontroller.printer;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -6,20 +6,17 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
-import neoAtlantis.utils.accessController.AccessController;
-import neoAtlantis.utils.accessController.audit.interfaces.AuditWay;
-import neoAtlantis.utils.accessController.audit.interfaces.EventAudit;
-import neoAtlantis.utils.accessController.objects.LogEvent;
-import static neoAtlantis.utils.accessController.printer.SimpleHtmlLoginPrinter.REQUEST_KEY;
-import neoAtlantis.utils.accessController.printer.interfaces.AuditPrinter;
-import static neoAtlantis.utils.accessController.printer.interfaces.UserAdministratorPrinter.MODE_ORDER_PARAM;
-import static neoAtlantis.utils.accessController.printer.interfaces.UserAdministratorPrinter.ORDER_PARAM;
-import static neoAtlantis.utils.accessController.printer.interfaces.UserAdministratorPrinter.PAGE_PARAM;
-import neoAtlantis.utils.accessController.web.listeners.AccessControllerPublisher;
-import neoAtlantis.utils.apps.catalogs.objetcs.OrderType;
-import neoAtlantis.utils.apps.printer.exceptions.FormatterException;
-import neoAtlantis.utils.apps.utils.UtilsPagination;
-import neoAtlantis.utils.apps.web.utils.ResourcesLoader;
+import neoatlantis.accesscontroller.AccessController;
+import neoatlantis.accesscontroller.audit.interfaces.AuditWay;
+import neoatlantis.accesscontroller.audit.interfaces.EventAudit;
+import neoatlantis.accesscontroller.objects.LogEvent;
+import neoatlantis.accesscontroller.printer.interfaces.AuditPrinter;
+import neoatlantis.accesscontroller.printer.interfaces.UserAdministratorPrinter;
+import neoatlantis.accesscontroller.web.listeners.AccessControllerPublisher;
+import neoatlantis.applications.catalogs.objetcs.OrderType;
+import neoatlantis.applications.printer.exceptions.FormatterException;
+import neoatlantis.applications.utils.UtilsPagination;
+import neoatlantis.applications.web.utils.ResourcesLoader;
 import org.apache.log4j.Logger;
 
 /**
@@ -44,15 +41,15 @@ public class SimpleHtmlAuditPrinter implements AuditPrinter {
         Date fecFin;
         Calendar cTmp;
         
-        if( params.get(REQUEST_KEY)==null ){
+        if( params.get(SimpleHtmlLoginPrinter.REQUEST_KEY)==null ){
             throw new FormatterException("No se proporciono el request para generar el objeto HTML.");
         }
         //obtengo el request
         request=((HttpServletRequest)params.get(SimpleHtmlLoginPrinter.REQUEST_KEY));
-        if( request.getParameter(ORDER_PARAM)!=null ){
-            order=request.getParameter(ORDER_PARAM);
+        if( request.getParameter(UserAdministratorPrinter.ORDER_PARAM)!=null ){
+            order=request.getParameter(UserAdministratorPrinter.ORDER_PARAM);
         }
-        if( request.getParameter(MODE_ORDER_PARAM)!=null && request.getParameter(MODE_ORDER_PARAM).equalsIgnoreCase("DESC") ){
+        if( request.getParameter(UserAdministratorPrinter.MODE_ORDER_PARAM)!=null && request.getParameter(UserAdministratorPrinter.MODE_ORDER_PARAM).equalsIgnoreCase("DESC") ){
             ordTipo=OrderType.DESC;
         }
 
@@ -61,7 +58,7 @@ public class SimpleHtmlAuditPrinter implements AuditPrinter {
 
         int pagActual=1;        
         try{
-            pagActual=Integer.parseInt( request.getParameter(PAGE_PARAM) );
+            pagActual=Integer.parseInt( request.getParameter(UserAdministratorPrinter.PAGE_PARAM) );
         }catch(Exception ex){}
 
         cTmp=Calendar.getInstance();
@@ -99,13 +96,13 @@ public class SimpleHtmlAuditPrinter implements AuditPrinter {
             sb.append("</tr>\n");
             sb.append("</table>\n");
             sb.append("<div class=\"NA_DataFiltersControls\">\n");
-            sb.append("<button type=\"button\" onclick=\"this.form.elements['").append(PAGE_PARAM).append("'].value='1';this.form.submit();\">Filtrar</button>\n");
+            sb.append("<button type=\"button\" onclick=\"this.form.elements['").append(UserAdministratorPrinter.PAGE_PARAM).append("'].value='1';this.form.submit();\">Filtrar</button>\n");
             sb.append("</div>\n");
             sb.append("</div>\n");
             
-            sb.append("<input type=\"hidden\" name=\"").append(PAGE_PARAM).append("\" id=\"").append(PAGE_PARAM).append("\"  value=\"").append(pagActual).append("\">\n");
-            sb.append("<input type=\"hidden\" name=\"").append(ORDER_PARAM).append("\" id=\"").append(ORDER_PARAM).append("\"  value=\"").append(order).append("\">\n");
-            sb.append("<input type=\"hidden\" name=\"").append(MODE_ORDER_PARAM).append("\" id=\"").append(MODE_ORDER_PARAM).append("\"  value=\"").append(ordTipo).append("\">\n");
+            sb.append("<input type=\"hidden\" name=\"").append(UserAdministratorPrinter.PAGE_PARAM).append("\" id=\"").append(UserAdministratorPrinter.PAGE_PARAM).append("\"  value=\"").append(pagActual).append("\">\n");
+            sb.append("<input type=\"hidden\" name=\"").append(UserAdministratorPrinter.ORDER_PARAM).append("\" id=\"").append(UserAdministratorPrinter.ORDER_PARAM).append("\"  value=\"").append(order).append("\">\n");
+            sb.append("<input type=\"hidden\" name=\"").append(UserAdministratorPrinter.MODE_ORDER_PARAM).append("\" id=\"").append(UserAdministratorPrinter.MODE_UserAdministratorPrinter.ORDER_PARAM).append("\"  value=\"").append(ordTipo).append("\">\n");
             sb.append("<div class=\"NA_DataList_list\">\n");
             sb.append("<table>\n");
             sb.append("<tr>\n");

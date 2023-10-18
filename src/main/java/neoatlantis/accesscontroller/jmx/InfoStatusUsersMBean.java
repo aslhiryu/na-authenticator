@@ -1,6 +1,6 @@
-package neoAtlantis.utils.accessController.jmx;
+package neoatlantis.accesscontroller.jmx;
 
-import neoAtlantis.utils.accessController.blocker.interfaces.BlockerWay;
+import neoatlantis.accesscontroller.blocker.interfaces.BlockerWay;
 import org.apache.log4j.Logger;
 
 /**

@@ -1,9 +1,9 @@
-package neoAtlantis.utils.accessController.resourceAccessAllower;
+package neoatlantis.accesscontroller.resourceAccessAllower;
 
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletResponse;
-import neoAtlantis.utils.accessController.exceptions.WayConfigurationException;
+import neoatlantis.accesscontroller.exceptions.WayConfigurationException;
 import org.apache.log4j.Logger;
 
 /**

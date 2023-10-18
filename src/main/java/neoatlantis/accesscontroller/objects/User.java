@@ -1,11 +1,11 @@
-package neoAtlantis.utils.accessController.objects;
+package neoatlantis.accesscontroller.objects;
 
 import java.io.ByteArrayOutputStream;
 import java.io.Serializable;
 import java.io.StringReader;
 import java.util.*;
-import neoAtlantis.utils.accessController.authentication.interfaces.ValidationResult;
-import neoAtlantis.utils.apps.web.objects.ApplicationSession;
+import neoatlantis.accesscontroller.authentication.interfaces.ValidationResult;
+import neoatlantis.applications.web.objects.ApplicationSession;
 import org.jdom.*;
 import org.jdom.input.SAXBuilder;
 import org.jdom.output.Format;

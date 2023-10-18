@@ -1,18 +1,18 @@
-package neoAtlantis.utils.accessController.authentication.interfaces;
+package neoatlantis.accesscontroller.authentication.interfaces;
 
 import java.util.Calendar;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
-import neoAtlantis.utils.accessController.audit.interfaces.AuditWay;
-import neoAtlantis.utils.accessController.audit.interfaces.EventAudit;
-import neoAtlantis.utils.accessController.exceptions.WayAccessException;
-import neoAtlantis.utils.accessController.objects.User;
-import neoAtlantis.utils.apps.catalogs.objetcs.DataType;
-import neoAtlantis.utils.apps.catalogs.objetcs.MemoryColumn;
-import neoAtlantis.utils.apps.catalogs.objetcs.MemoryTable;
-import neoAtlantis.utils.apps.catalogs.objetcs.OrderType;
-import neoAtlantis.utils.cipher.interfaces.DataCipher;
+import neoatlantis.accesscontroller.audit.interfaces.AuditWay;
+import neoatlantis.accesscontroller.audit.interfaces.EventAudit;
+import neoatlantis.accesscontroller.exceptions.WayAccessException;
+import neoatlantis.accesscontroller.objects.User;
+import neoatlantis.applications.catalogs.objetcs.DataType;
+import neoatlantis.applications.catalogs.objetcs.MemoryColumn;
+import neoatlantis.applications.catalogs.objetcs.MemoryTable;
+import neoatlantis.applications.catalogs.objetcs.OrderType;
+import neoatlantis.utils.cipher.interfaces.DataCipher;
 import org.apache.log4j.Logger;
 
 /**

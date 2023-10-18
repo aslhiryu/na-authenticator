@@ -1,4 +1,4 @@
-package neoAtlantis.utils.accessController;
+package neoatlantis.accesscontroller;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -6,32 +6,32 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
-import neoAtlantis.utils.accessController.allower.interfaces.AllowerWay;
-import neoAtlantis.utils.accessController.audit.interfaces.AuditWay;
-import neoAtlantis.utils.accessController.audit.interfaces.EventAudit;
-import neoAtlantis.utils.accessController.authentication.interfaces.AuthenticationWay;
-import neoAtlantis.utils.accessController.authentication.interfaces.ValidationResult;
-import neoAtlantis.utils.accessController.blocker.interfaces.BlockerWay;
-import neoAtlantis.utils.accessController.exceptions.WayAccessException;
-import neoAtlantis.utils.accessController.jmx.InfoStatusUsers;
-import neoAtlantis.utils.accessController.jmx.InfoStatusUsersMBean;
-import neoAtlantis.utils.accessController.login.interfaces.AuthenticationLogin;
-import neoAtlantis.utils.accessController.objects.EnvironmentType;
-import neoAtlantis.utils.accessController.objects.LogEvent;
-import neoAtlantis.utils.accessController.objects.Permission;
-import neoAtlantis.utils.accessController.objects.Role;
-import neoAtlantis.utils.accessController.objects.User;
-import neoAtlantis.utils.accessController.profiler.interfaces.ProfilerWay;
-import neoAtlantis.utils.accessController.scheduler.interfaces.SchedulerWay;
-import neoAtlantis.utils.accessController.web.UtilsAuthenticatorBean;
-import neoAtlantis.utils.apps.catalogs.objetcs.OrderType;
-import neoAtlantis.utils.apps.utils.UtilsPagination;
-import neoAtlantis.utils.apps.web.UtilsApplicationBean;
-import neoAtlantis.utils.apps.web.listeners.ApplicationListener;
-import neoAtlantis.utils.apps.web.listeners.PageListener;
-import neoAtlantis.utils.cipher.interfaces.DataCipher;
-import neoAtlantis.utils.data.DataUtils;
-import neoAtlantis.utils.objects.Event;
+import neoatlantis.accesscontroller.allower.interfaces.AllowerWay;
+import neoatlantis.accesscontroller.audit.interfaces.AuditWay;
+import neoatlantis.accesscontroller.audit.interfaces.EventAudit;
+import neoatlantis.accesscontroller.authentication.interfaces.AuthenticationWay;
+import neoatlantis.accesscontroller.authentication.interfaces.ValidationResult;
+import neoatlantis.accesscontroller.blocker.interfaces.BlockerWay;
+import neoatlantis.accesscontroller.exceptions.WayAccessException;
+import neoatlantis.accesscontroller.jmx.InfoStatusUsers;
+import neoatlantis.accesscontroller.jmx.InfoStatusUsersMBean;
+import neoatlantis.accesscontroller.login.interfaces.AuthenticationLogin;
+import neoatlantis.accesscontroller.objects.EnvironmentType;
+import neoatlantis.accesscontroller.objects.LogEvent;
+import neoatlantis.accesscontroller.objects.Permission;
+import neoatlantis.accesscontroller.objects.Role;
+import neoatlantis.accesscontroller.objects.User;
+import neoatlantis.accesscontroller.profiler.interfaces.ProfilerWay;
+import neoatlantis.accesscontroller.scheduler.interfaces.SchedulerWay;
+import neoatlantis.accesscontroller.web.UtilsAuthenticatorBean;
+import neoatlantis.applications.catalogs.objetcs.OrderType;
+import neoatlantis.applications.utils.UtilsPagination;
+import neoatlantis.applications.web.UtilsApplicationBean;
+import neoatlantis.applications.web.listeners.ApplicationListener;
+import neoatlantis.applications.web.listeners.PageListener;
+import neoatlantis.utils.cipher.interfaces.DataCipher;
+import neoatlantis.utils.data.DataUtils;
+import neoatlantis.utils.objects.Event;
 import org.apache.log4j.Logger;
 
 /**
@@ -40,25 +40,25 @@ import org.apache.log4j.Logger;
  * <br>
  * Este objeto es el responsable de autenticar cuentas de usuario para acceder a 
  * una aplicacion.
- * Para hacerlo utiliza un {@link neoAtlantis.utilidades.accessController.authentication.interfaces.AuthenticationWay Medio de Autenticacion}
+ * Para hacerlo utiliza un {@link neoatlantis.utilidades.accesscontroller.authentication.interfaces.AuthenticationWay Medio de Autenticacion}
  * (archivo de texto, BD, etc.) el cual valida que sea un usuario permitido el que 
  * esta intentando acceder.<br>
  * <br>
- * Restringe el acceso mediante lo estipulado en un {@link neoAtlantis.utilidades.accessController.scheduler.interfaces.SchedulerWay Medio Calendarizador}
+ * Restringe el acceso mediante lo estipulado en un {@link neoatlantis.utilidades.accesscontroller.scheduler.interfaces.SchedulerWay Medio Calendarizador}
  * el cual define los tiempos de acceso permitidos a la aplicacion.<br>
  * <br>
  * Para llevar el control de quienes estan conectados y quienes estan bloqueados 
  * por mal uso de la cuenta, utiliza un
- * {@link neoAtlantis.utilidades.accessController.blocker.interfaces.BlockerWay Medio de Bloqueo} 
+ * {@link neoatlantis.utilidades.accesscontroller.blocker.interfaces.BlockerWay Medio de Bloqueo} 
  * (archivo de texto, BD, etc.)<br>
  * <br>
  * Finalmente para registrar los eventos que ocurren durante la autenticacion de 
  * cuentas y validacion de permisos, utiliza una
- * {@link neoAtlantis.utilidades.accessController.audit.interfaces.AuditWay Medio Bitacoreador}
+ * {@link neoatlantis.utilidades.accesscontroller.audit.interfaces.AuditWay Medio Bitacoreador}
  * en donde se registran todos los eventos ocurridos.<br>
  * <br>
  * Para generar y confirgurar el objeto dentro de una aplicaci&oacute;n web, se 
- * puede apoyar con la utileria {@link neoAtlantis.utilidades.accessController.utils.AccessControllerPublisher}
+ * puede apoyar con la utileria {@link neoatlantis.utilidades.accesscontroller.AccessControllerPublisher}
  * @version 4.1
  * @author Hiryu (aslhiryu@gmail.com)
  */
@@ -114,7 +114,7 @@ public class AccessController {
         
         //genero el mBean de la informacion de usuarios
         this.mBean=new InfoStatusUsersMBean(bw);
-        ApplicationListener.registerMBean(this.mBean, InfoStatusUsers.class, "neoAtlantis.app."+(DataUtils.cleanSpecialCharacters(this.nomApp))+".users.jmx:type=InfoStatusUsers");        
+        ApplicationListener.registerMBean(this.mBean, InfoStatusUsers.class, "neoatlantis.app."+(DataUtils.cleanSpecialCharacters(this.nomApp))+".users.jmx:type=InfoStatusUsers");        
         
         DEBUGER.debug("Inicia la configuración del control de accesos: "+this);
     }

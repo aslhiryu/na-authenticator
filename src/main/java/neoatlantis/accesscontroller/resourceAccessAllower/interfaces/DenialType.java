@@ -1,4 +1,4 @@
-package neoAtlantis.utils.accessController.resourceAccessAllower.interfaces;
+package neoatlantis.accesscontroller.resourceAccessAllower.interfaces;
 
 /**
  * Enumeraci&oacute;n que define los tipos de acceso a los recursos.
