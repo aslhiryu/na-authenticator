@@ -90,7 +90,7 @@ public class DbAuthentication extends AuthenticationWay {
      */
     protected Properties config;
     
-    private static Properties campos;
+    protected static Properties campos;
     
     static{
         campos=new Properties();
@@ -310,7 +310,9 @@ public class DbAuthentication extends AuthenticationWay {
                 user=new User(res.getString(1), (String)datos.get(AuthenticationWay.USER_PARAM), "127.0.0.1", "localhost", EnvironmentType.WEB);
                 user.setName(res.getString(2));
                 user.setMail(res.getString(4));
-                user.setLastAccessDate(new java.util.Date(res.getTimestamp(7).getTime()));
+                if(res.getString(7)!=null){
+                    user.setLastAccessDate(new java.util.Date(res.getTimestamp(7).getTime()));
+                }
                 loadAditionalData(res, user);
 
                 //valida la contraseña
@@ -366,7 +368,7 @@ public class DbAuthentication extends AuthenticationWay {
         if( campos.containsKey(AuthenticationWay.LAST_ACCESS_FIELD) && campos.getProperty(AuthenticationWay.LAST_ACCESS_FIELD)!=null
                 && !campos.getProperty(AuthenticationWay.LAST_ACCESS_FIELD).isEmpty() && !campos.getProperty(AuthenticationWay.LAST_ACCESS_FIELD).equalsIgnoreCase("null")){
             try{
-                this.sql = new StringBuffer(this.getQuerySelectUser());
+                this.sql = new StringBuffer(this.getQueryUpdateLastAccess());
                 DEBUGER.debug("Intenta ejecutar la sentencia '" + this.sql.toString() + "'.");
                 
                 con = ConfigurationDB.createConection(this.config);

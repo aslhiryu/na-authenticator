@@ -231,6 +231,25 @@ public class ValidatorConfigurator {
         AccessController ctrl=AccessController.getInstance(); //(AccessController)request.getSession().getAttribute(AccessControllerPublisher.CLAVE_CTRL);
         String sess;
 
+        //valida las paginas de excepcion
+        for (FilterException e: excs) {
+            if ( e.getType()==TypeException.RESOURCE && request.getServletPath().toLowerCase().endsWith("."+e.getResource()) ) {
+                DEBUGER.debug("Omite el recurso por ser una excepcion (Recurso).");
+                
+                return DenialType.ALLOWED;
+            }
+            else if ( e.getType()==TypeException.DIRECTORY && request.getServletPath().startsWith("/"+e.getResource()) ) {
+                DEBUGER.debug("Omite la pagina por ser una excepcion (Directorio).");
+                
+                return DenialType.ALLOWED;
+            }
+            else if ( e.getType()==TypeException.PAGE && request.getServletPath().equals("/"+e.getResource()) ) {
+                DEBUGER.debug("Omite la pagina por ser una excepcion (Pagina).");
+                
+                return DenialType.ALLOWED;
+            }
+        }
+
         //recupero al usuario
         User u = (User)request.getSession().getAttribute(AccessControllerPublisher.USER_KEY);
         DEBUGER.debug("Recurso a validar: "+request.getServletPath());        
@@ -284,25 +303,6 @@ public class ValidatorConfigurator {
             }
             else{
                 return DenialType.NOT_CONNECTED;
-            }
-        }
-
-        //valida las paginas de excepcion
-        for (FilterException e: excs) {
-            if ( e.getType()==TypeException.RESOURCE && request.getServletPath().toLowerCase().endsWith("."+e.getResource()) ) {
-                DEBUGER.debug("Omite el recurso por ser una excepcion (Recurso).");
-                
-                return DenialType.ALLOWED;
-            }
-            else if ( e.getType()==TypeException.DIRECTORY && request.getServletPath().startsWith("/"+e.getResource()) ) {
-                DEBUGER.debug("Omite la pagina por ser una excepcion (Directorio).");
-                
-                return DenialType.ALLOWED;
-            }
-            else if ( e.getType()==TypeException.PAGE && request.getServletPath().equals("/"+e.getResource()) ) {
-                DEBUGER.debug("Omite la pagina por ser una excepcion (Pagina).");
-                
-                return DenialType.ALLOWED;
             }
         }
 

@@ -1,3 +1,0 @@
-$computername = "mycomputername"
-
-$computername

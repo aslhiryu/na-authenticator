@@ -283,7 +283,6 @@ public class XmlSessionResourceAccess extends ResourceAccessAllower implements F
      * del usuario no es valida.
      * @param request Resquest de la peticion web
      * @param response Response de la peticion web
-     * @throws java.lang.Exception
      */
     protected void sessionExpired(ServletRequest request, ServletResponse response){
         try{
@@ -333,7 +332,7 @@ public class XmlSessionResourceAccess extends ResourceAccessAllower implements F
     protected void existLastVisit(ServletRequest request, ServletResponse response, String url){
         try{
             RequestDispatcher dispatcher;
-            DEBUGER.debug("Existe pagina d eultima visita, redirecionando a /"+url+"...");
+            DEBUGER.debug("Existe pagina de ultima visita, redirecionando a /"+url+"...");
 
             dispatcher = this.filterConfig.getServletContext().getRequestDispatcher("/"+url);
             dispatcher.forward(request, response);
