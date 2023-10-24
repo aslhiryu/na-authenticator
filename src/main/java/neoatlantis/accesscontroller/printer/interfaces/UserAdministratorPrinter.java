@@ -1,7 +1,7 @@
 package neoatlantis.accesscontroller.printer.interfaces;
 
 import java.util.Map;
-import neoatlantis.applications.printer.exceptions.FormatterException;
+import neoatlantis.accesscontroller.printer.exceptions.FormatterException;
 
 /**
  *

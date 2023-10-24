@@ -23,15 +23,12 @@ import neoatlantis.accesscontroller.objects.Role;
 import neoatlantis.accesscontroller.objects.User;
 import neoatlantis.accesscontroller.profiler.interfaces.ProfilerWay;
 import neoatlantis.accesscontroller.scheduler.interfaces.SchedulerWay;
-import neoatlantis.accesscontroller.web.UtilsAuthenticatorBean;
-import neoatlantis.applications.catalogs.objetcs.OrderType;
-import neoatlantis.applications.utils.UtilsPagination;
-import neoatlantis.applications.web.UtilsApplicationBean;
-import neoatlantis.applications.web.listeners.ApplicationListener;
-import neoatlantis.applications.web.listeners.PageListener;
+import neoatlantis.entity.Event;
+import neoatlantis.utils.catalogs.objects.OrderMode;
 import neoatlantis.utils.cipher.interfaces.DataCipher;
 import neoatlantis.utils.data.DataUtils;
-import neoatlantis.utils.objects.Event;
+import neoatlantis.utils.pagination.UtilsPagination;
+import neoatlantis.utils.web.MBeanRegister;
 import org.apache.log4j.Logger;
 
 /**
@@ -98,7 +95,7 @@ public class AccessController {
      * @param sw Medio temporizador
      * @throws Exception 
      */
-    private AccessController(String na, AuthenticationWay aw, DataCipher dc, ProfilerWay pw, AllowerWay alw, BlockerWay bw, AuditWay auw, SchedulerWay sw) throws Exception{
+    protected AccessController(String na, AuthenticationWay aw, DataCipher dc, ProfilerWay pw, AllowerWay alw, BlockerWay bw, AuditWay auw, SchedulerWay sw) throws Exception{
         this.nomApp=na;
         this.autenticador=aw;
         this.cifra=dc;
@@ -114,7 +111,7 @@ public class AccessController {
         
         //genero el mBean de la informacion de usuarios
         this.mBean=new InfoStatusUsersMBean(bw);
-        ApplicationListener.registerMBean(this.mBean, InfoStatusUsers.class, "neoatlantis.app."+(DataUtils.cleanSpecialCharacters(this.nomApp))+".users.jmx:type=InfoStatusUsers");        
+        MBeanRegister.registerMBean(this.mBean, InfoStatusUsers.class, "neoatlantis.app."+(DataUtils.cleanSpecialCharacters(this.nomApp))+".users.jmx:type=InfoStatusUsers");        
         
         DEBUGER.debug("Inicia la configuración del control de accesos: "+this);
     }
@@ -415,7 +412,7 @@ public class AccessController {
      * Recupera la lista de usuarios registrados
      * @return Lista de usuarios
      */
-    public List<User> getRegisteredUsers(String order, OrderType orderType){
+    public List<User> getRegisteredUsers(String order, OrderMode orderType){
         return this.autenticador.getRegisteredUserList(order, orderType);
     }
     
@@ -720,7 +717,7 @@ public class AccessController {
      * Recupera la lista de eventos registrados
      * @return Lista de usuarios
      */
-    public List<LogEvent> getEventList(Date ini, Date fin, String order, OrderType orderType, int page) throws Exception{
+    public List<LogEvent> getEventList(Date ini, Date fin, String order, OrderMode orderType, int page) throws Exception{
         HashMap<String,Object> p=new HashMap<String,Object>();
         List<LogEvent> res=new ArrayList<LogEvent>();;
         List<Event> rTmp;

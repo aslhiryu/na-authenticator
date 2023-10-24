@@ -33,11 +33,10 @@ import neoatlantis.accesscontroller.exceptions.WayAccessException;
 import neoatlantis.accesscontroller.exceptions.WayConfigurationException;
 import neoatlantis.accesscontroller.objects.EnvironmentType;
 import neoatlantis.accesscontroller.objects.User;
-import neoatlantis.accesscontroller.printer.SimpleHtmlUserAdministratorPrinter;
 import neoatlantis.accesscontroller.printer.interfaces.UserAdministratorPrinter;
-import neoatlantis.applications.catalogs.objetcs.MemoryColumn;
-import neoatlantis.applications.catalogs.objetcs.MemoryTable;
-import neoatlantis.applications.catalogs.objetcs.OrderType;
+import neoatlantis.utils.catalogs.objects.MemoryColumn;
+import neoatlantis.utils.catalogs.objects.MemoryTable;
+import neoatlantis.utils.catalogs.objects.OrderMode;
 import neoatlantis.utils.data.DataUtils;
 import neoatlantis.utils.dataBase.ConfigurationDB;
 import org.apache.log4j.Logger;
@@ -290,7 +289,7 @@ public class LDAPProvisioningAuthentication extends LDAPAuthentication {
     }
 
     @Override
-    public List<User> getRegisteredUserList(String order, OrderType orderType) throws WayAccessException{
+    public List<User> getRegisteredUserList(String order, OrderMode orderType) throws WayAccessException{
         ArrayList<User> lTmp=new ArrayList<User>();
         Connection con=null;
         PreparedStatement ps=null;
@@ -555,8 +554,8 @@ public class LDAPProvisioningAuthentication extends LDAPAuthentication {
                 DEBUGER.debug("Intenta ejecutar la sentencia '" + this.sql.toString() + "'.");            
                 con = ConfigurationDB.createConection(this.configDB);
                 ps = con.prepareStatement(sql.toString());
-                ps.setString(1, (String)datos.get(SimpleHtmlUserAdministratorPrinter.NAME_DATA));
-                ps.setString(2, (String)datos.get(SimpleHtmlUserAdministratorPrinter.EMAIL_DATA));
+                ps.setString(1, (String)datos.get(AuthenticationWay.NAME_PARAM));
+                ps.setString(2, (String)datos.get(AuthenticationWay.MAIL_PARAM));
                 ps.setString(3, (String)datos.get(UserAdministratorPrinter.ID_DATA));
 
                 ps.executeUpdate();

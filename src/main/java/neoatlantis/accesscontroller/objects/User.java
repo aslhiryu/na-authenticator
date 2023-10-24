@@ -5,7 +5,6 @@ import java.io.Serializable;
 import java.io.StringReader;
 import java.util.*;
 import neoatlantis.accesscontroller.authentication.interfaces.ValidationResult;
-import neoatlantis.applications.web.objects.ApplicationSession;
 import org.jdom.*;
 import org.jdom.input.SAXBuilder;
 import org.jdom.output.Format;
@@ -21,13 +20,12 @@ public class User extends PermissionEntity implements Serializable{
     private String nombre;
     private String user;
     private String mail;
-    private List<Role> roles;
-    private Map<String,List<String>> propiedades;
+    protected List<Role> roles;
+    protected Map<String,List<String>> propiedades;
     private EnvironmentType tipoTerminal;
     private String origen;
     private String terminal;
     private ValidationResult estado;
-    private ApplicationSession sesion;
     private Date generacion;
     private Date actividad;
     private Date ultimoAcceso;
@@ -384,7 +382,6 @@ public class User extends PermissionEntity implements Serializable{
         sb.append("Terminal: ").append(this.terminal).append(System.getProperty("line.separator"));
         sb.append("Tipo de Terminal: ").append(this.tipoTerminal).append(System.getProperty("line.separator"));
         sb.append("Estado: ").append(this.estado).append(System.getProperty("line.separator"));
-        sb.append("Sesion: ").append(this.sesion).append(System.getProperty("line.separator"));
         sb.append("Generación: ").append(this.generacion).append(System.getProperty("line.separator"));
         sb.append("Activo: ").append(this.active).append(System.getProperty("line.separator"));
         sb.append("Ult. Acceso: ").append(this.ultimoAcceso).append(System.getProperty("line.separator"));
@@ -408,7 +405,6 @@ public class User extends PermissionEntity implements Serializable{
         uTmp.photo=this.photo;
         uTmp.propiedades=this.propiedades;
         uTmp.roles=(ArrayList)((ArrayList)this.roles).clone();
-        uTmp.sesion=this.sesion;
         uTmp.ultimoAcceso=this.ultimoAcceso;
         
         return uTmp;
@@ -476,22 +472,6 @@ public class User extends PermissionEntity implements Serializable{
     }
 
     /**
-     * Recupera la sesion del usuario
-     * @return the sesion
-     */
-    public ApplicationSession getSession() {
-        return sesion;
-    }
-    
-    /**
-     * Define una nueva sesión pra ael usuario
-     * @param session 
-     */
-    public void newSession(ApplicationSession session) {
-        this.sesion=session;
-    }
-
-    /**
      * Recupera la fecha de gebneracion del usuario
      * @return the generacion
      */
@@ -503,7 +483,7 @@ public class User extends PermissionEntity implements Serializable{
      * Asigna la fecha de generacion del usuario
      * @return the generacion
      */
-    void setCreatedDate(Date generacion) {
+    protected void setCreatedDate(Date generacion) {
         this.generacion=generacion;
     }
     
@@ -529,9 +509,6 @@ public class User extends PermissionEntity implements Serializable{
      */
     public void setActivityDate(Date actividad) {
         this.actividad = actividad;
-        if( this.sesion!=null ){
-            this.sesion.setLastActivity(new Date());
-        }
     }
 
     /**

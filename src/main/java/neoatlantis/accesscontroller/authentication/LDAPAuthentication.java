@@ -26,7 +26,7 @@ import neoatlantis.accesscontroller.exceptions.WayConfigurationException;
 import neoatlantis.accesscontroller.objects.EnvironmentType;
 import neoatlantis.accesscontroller.objects.Role;
 import neoatlantis.accesscontroller.objects.User;
-import neoatlantis.applications.catalogs.objetcs.OrderType;
+import neoatlantis.utils.catalogs.objects.OrderMode;
 import neoatlantis.utils.ldap.ConfigurationLDAP;
 import org.apache.log4j.Logger;
 
@@ -290,7 +290,7 @@ public class LDAPAuthentication extends AuthenticationWay {
     }
     
     @Override
-    public List<User> getRegisteredUserList(String order, OrderType orderType) throws WayAccessException{
+    public List<User> getRegisteredUserList(String order, OrderMode orderType) throws WayAccessException{
         return new ArrayList();
     }
     

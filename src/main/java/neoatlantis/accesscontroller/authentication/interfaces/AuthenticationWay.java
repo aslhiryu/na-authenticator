@@ -8,10 +8,10 @@ import neoatlantis.accesscontroller.audit.interfaces.AuditWay;
 import neoatlantis.accesscontroller.audit.interfaces.EventAudit;
 import neoatlantis.accesscontroller.exceptions.WayAccessException;
 import neoatlantis.accesscontroller.objects.User;
-import neoatlantis.applications.catalogs.objetcs.DataType;
-import neoatlantis.applications.catalogs.objetcs.MemoryColumn;
-import neoatlantis.applications.catalogs.objetcs.MemoryTable;
-import neoatlantis.applications.catalogs.objetcs.OrderType;
+import neoatlantis.utils.catalogs.objects.DataType;
+import neoatlantis.utils.catalogs.objects.MemoryColumn;
+import neoatlantis.utils.catalogs.objects.MemoryTable;
+import neoatlantis.utils.catalogs.objects.OrderMode;
 import neoatlantis.utils.cipher.interfaces.DataCipher;
 import org.apache.log4j.Logger;
 
@@ -126,7 +126,7 @@ public abstract class AuthenticationWay {
      * @return Lista de usuarios
      * @throws WayAccessException 
      */
-    public abstract List<User> getRegisteredUserList(final String order,final  OrderType orderType) throws WayAccessException;
+    public abstract List<User> getRegisteredUserList(final String order,final  OrderMode orderType) throws WayAccessException;
     
     public abstract Map<String, Object> createUser(final Map<String, Object> datos) throws WayAccessException;
     

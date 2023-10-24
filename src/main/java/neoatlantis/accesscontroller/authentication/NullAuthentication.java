@@ -8,7 +8,7 @@ import neoatlantis.accesscontroller.authentication.interfaces.AuthenticationWay;
 import neoatlantis.accesscontroller.exceptions.WayAccessException;
 import neoatlantis.accesscontroller.objects.EnvironmentType;
 import neoatlantis.accesscontroller.objects.User;
-import neoatlantis.applications.catalogs.objetcs.OrderType;
+import neoatlantis.utils.catalogs.objects.OrderMode;
 
 /**
  *
@@ -32,7 +32,7 @@ public class NullAuthentication extends AuthenticationWay {
     }
 
     @Override
-    public List<User> getRegisteredUserList(String order, OrderType orderType) throws WayAccessException {
+    public List<User> getRegisteredUserList(String order, OrderMode orderType) throws WayAccessException {
         return new ArrayList<User>();
     }
 
