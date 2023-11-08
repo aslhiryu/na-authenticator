@@ -1,0 +1,52 @@
+# Workflow para generar la libreria y colocarla en el repositorio
+# For more information see: https://github.com/actions/setup-java/blob/main/docs/advanced-usage.md#apache-maven-with-a-settings-path
+
+name: Maven Package
+
+on:
+  push:
+    tags: ['V.*.*']
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+    - name: Checkout codigo
+      uses: actions/checkout@v2
+      
+    - name: Prepara MVN
+      uses: s4u/maven-settings-action@v2.8.0
+      with:
+        servers: |
+          [{
+            "id": "github",
+            "configuration": {
+              "httpHeaders": {
+                "property": {
+                  "name": "Authorization",
+                  "value": "Bearer ${{ github.token }}"
+                }
+              }
+            }
+          }]
+    
+    - name: Set up JDK 8
+      uses: actions/setup-java@v2
+      with:
+        java-version: '8'
+        distribution: 'temurin'
+        server-id: github  # Value of the distributionManagement/repository/id field of the pom.xml
+        settings-path: ${{ github.workspace }} # location for the settings.xml file
+          
+    - name: Genera JAR 
+      run: mvn -B package -Pgithubasl -f pom.xml
+
+    - name: Publica el JAR en GitHub Packages Apache Maven
+      run: mvn deploy -e -Pgithubasl -f pom.xml
+      env:
+        GITHUB_TOKEN: ${{ github.token }}

@@ -31,6 +31,7 @@ public class User extends PermissionEntity implements Serializable{
     private Date ultimoAcceso;
     private byte[] photo;
     private boolean active;
+    private ApplicationSession sesion;
 
     
     
@@ -382,6 +383,7 @@ public class User extends PermissionEntity implements Serializable{
         sb.append("Terminal: ").append(this.terminal).append(System.getProperty("line.separator"));
         sb.append("Tipo de Terminal: ").append(this.tipoTerminal).append(System.getProperty("line.separator"));
         sb.append("Estado: ").append(this.estado).append(System.getProperty("line.separator"));
+        sb.append("Sesion: ").append(this.sesion).append(System.getProperty("line.separator"));
         sb.append("Generación: ").append(this.generacion).append(System.getProperty("line.separator"));
         sb.append("Activo: ").append(this.active).append(System.getProperty("line.separator"));
         sb.append("Ult. Acceso: ").append(this.ultimoAcceso).append(System.getProperty("line.separator"));
@@ -405,6 +407,7 @@ public class User extends PermissionEntity implements Serializable{
         uTmp.photo=this.photo;
         uTmp.propiedades=this.propiedades;
         uTmp.roles=(ArrayList)((ArrayList)this.roles).clone();
+        uTmp.sesion=this.sesion;
         uTmp.ultimoAcceso=this.ultimoAcceso;
         
         return uTmp;
@@ -509,6 +512,9 @@ public class User extends PermissionEntity implements Serializable{
      */
     public void setActivityDate(Date actividad) {
         this.actividad = actividad;
+        if( this.sesion!=null ){
+            this.sesion.setLastActivity(new Date());
+        }
     }
 
     /**
@@ -533,6 +539,22 @@ public class User extends PermissionEntity implements Serializable{
     
     public byte[] getPhoto(){
         return this.photo;
+    }
+
+    /**
+     * Recupera la sesion del usuario
+     * @return the sesion
+     */
+    public ApplicationSession getSession() {
+        return sesion;
+    }
+    
+    /**
+     * Define una nueva sesión pra ael usuario
+     * @param session 
+     */
+    public void newSession(ApplicationSession session) {
+        this.sesion=session;
     }
     
     /**

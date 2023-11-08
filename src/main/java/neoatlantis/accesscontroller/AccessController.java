@@ -23,6 +23,7 @@ import neoatlantis.accesscontroller.objects.Role;
 import neoatlantis.accesscontroller.objects.User;
 import neoatlantis.accesscontroller.profiler.interfaces.ProfilerWay;
 import neoatlantis.accesscontroller.scheduler.interfaces.SchedulerWay;
+import neoatlantis.accesscontroller.utils.UtilCaptchaBean;
 import neoatlantis.entity.Event;
 import neoatlantis.utils.catalogs.objects.OrderMode;
 import neoatlantis.utils.cipher.interfaces.DataCipher;
@@ -61,6 +62,15 @@ import org.apache.log4j.Logger;
  */
 public class AccessController {
     private static final Logger DEBUGER = Logger.getLogger(AccessController.class);
+
+    /**
+     * Clave para el parametro que alberga el id del administrador que realizo la operacion
+     */
+    public static final String ID_ADMIN_PARAM="NA_idAdmin";
+    /**
+     * Clave para el parametro que alberga el nombre del administrador que realizo la operacion
+     */
+    public static final String NAME_ADMIN_PARAM="NA_nameAdmin";
 
     protected int maxIntentos = 3;
     protected AuthenticationWay autenticador;
@@ -207,7 +217,7 @@ public class AccessController {
         if( this.useCaptcha  && this.intentos>=this.maxIntentos && datos.get(AuthenticationLogin.REQUEST_WEB_KEY)!=null ){
             DEBUGER.debug("Realiza la validación del captcha.");
             //valida que sean iguales los codigos, si no genera un error
-            if( !UtilsApplicationBean.validateConfirmationCode((HttpServletRequest)datos.get(AuthenticationLogin.REQUEST_WEB_KEY), (String)datos.get(PageListener.CAPTCHA_PARAM)) ){
+            if( !UtilCaptchaBean.validateConfirmationCode((HttpServletRequest)datos.get(AuthenticationLogin.REQUEST_WEB_KEY), (String)datos.get(UtilCaptchaBean.CAPTCHA_PARAM)) ){
                 DEBUGER.debug("Captcha invalido.");
                 user=User.getNobody();
                 user.setOrigin(origen);
@@ -421,8 +431,8 @@ public class AccessController {
 
         if(admin!=null){
             this.writeEvent(admin, EventAudit.ADMIN, "Registra al usuario '"+newUser+"'.");
-            data.put(UtilsAuthenticatorBean.ID_ADMIN_PARAM, admin.getId());
-            data.put(UtilsAuthenticatorBean.NAME_ADMIN_PARAM, admin.getUser());
+            data.put(ID_ADMIN_PARAM, admin.getId());
+            data.put(NAME_ADMIN_PARAM, admin.getUser());
             
             return this.autenticador.createUser(data);
         }
@@ -438,8 +448,8 @@ public class AccessController {
 
         if(admin!=null && user!=null){
             this.writeEvent(admin, EventAudit.ADMIN, "Modifica al usuario '"+user.getUser()+"'.");
-            data.put(UtilsAuthenticatorBean.ID_ADMIN_PARAM, admin.getId());
-            data.put(UtilsAuthenticatorBean.NAME_ADMIN_PARAM, admin.getUser());
+            data.put(ID_ADMIN_PARAM, admin.getId());
+            data.put(NAME_ADMIN_PARAM, admin.getUser());
             
             return this.autenticador.updateUser(data);
         }
@@ -643,8 +653,8 @@ public class AccessController {
                     DEBUGER.fatal("No se logro terminar la conexión", ex);
                 }
 
-                if( u.getSession()!=null && u.getSession().getHttpSession()!=null ){
-                    u.getSession().getHttpSession().invalidate();
+                if( u.getSession()!=null ){
+                    u.getSession().destroySession();
                 }
                 
                 DEBUGER.debug("Termina la conexion del usuario: "+u.getUser());
